@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "busybox-name"
+  namespace: default
+  labels:
+    app: "busybox-label"
+spec:
+  containers:
+  - name: busybox-container-name
+    image: "busybox"
+    command:
+      - sleep
+      - "3600"
+  - name: busybox-container-name2
+    image: "busybox"
+    command:
+      - sleep
+      - "3600"

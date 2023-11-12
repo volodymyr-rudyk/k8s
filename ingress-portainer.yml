@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: portainer
+  name: root-ingress
+spec:
+  rules:
+    - host: page.local
+      http:
+        paths:
+          - path: /portainer
+            pathType: Exact
+            backend:
+              service:
+                name: portainer
+                port:
+                  number: 9000

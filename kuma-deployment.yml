@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuma-deployment
+spec:
+  selector:
+    matchLabels:
+      app: kuma
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kuma
+    spec:
+      containers:
+      - name: kuma
+        image: louislam/uptime-kuma:1
+        ports:
+        - containerPort: 3001
