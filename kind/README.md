@@ -14,7 +14,13 @@ colima start local --network-address --network-driver slirp --very-verbose
 
 kind create cluster --name kind-k8s --wait
 
-kind create cluster --config kind-example-config.yaml
+``` create kind
+kind create cluster --name kind-k8s --config kind-config-cluster.yaml
+```
+```install MetalLB
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests/metallb-native.yaml
+```
+
 
 cluster config created -> ${HOME}/.kube/config
 

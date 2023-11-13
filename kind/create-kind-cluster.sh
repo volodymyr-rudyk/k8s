@@ -1,0 +1,1 @@
+kind create cluster --name kind-k8s --config kind-config-cluster.yaml
