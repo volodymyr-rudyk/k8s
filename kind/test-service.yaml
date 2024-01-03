@@ -24,6 +24,19 @@ spec:
     args:
     - "-text=bar"
 ---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: baz-app
+  labels:
+    app: http-echo
+spec:
+  containers:
+  - name: baz-app
+    image: hashicorp/http-echo:latest
+    args:
+    - "-text=baz"
+---
 kind: Service
 apiVersion: v1
 metadata:
